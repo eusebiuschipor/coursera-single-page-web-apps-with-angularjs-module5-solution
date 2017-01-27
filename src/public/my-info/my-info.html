@@ -1,0 +1,25 @@
+<div class="container" ng-if="myInfoCtrl.registered">
+  <h3>Personal informations:</h3>
+  <ul>
+    <li><strong>First Name: </strong>{{ myInfoCtrl.myInfo.firstName }}</li>
+    <li><strong>Last Name: </strong>{{ myInfoCtrl.myInfo.lastName }}</li>
+    <li><strong>Emai Address: </strong>{{ myInfoCtrl.myInfo.emailAddress }}</li>
+    <li><strong>Phone Number: </strong>{{ myInfoCtrl.myInfo.phoneNumber }}</li>
+  </ul>
+  <h3>Menu informations:</h3>
+  <span ng-if="myInfoCtrl.myMenu.image_present === true">
+    <img class="img-responsive" width="250" height="150" ng-src="{{ myInfoCtrl.basePath}}/images/{{ myInfoCtrl.myMenu.short_name}}.jpg" alt="{{ myInfoCtrl.myMenu.name}}">
+  </span>
+  <ul>
+    <li><strong>Short Name: </strong>{{ myInfoCtrl.myMenu.short_name }}</li>
+    <li><strong>Name: </strong>{{ myInfoCtrl.myMenu.name }}</li>
+    <li><strong>Description: </strong>{{ myInfoCtrl.myMenu.description }}</li>
+    <li><strong>Price Small: </strong>{{ myInfoCtrl.myMenu.price_small }}</li>
+    <li><strong>Price Large: </strong>{{ myInfoCtrl.myMenu.price_large }}</li>
+    <li><strong>Small Porion Name: </strong>{{ myInfoCtrl.myMenu.small_portion_name }}</li>
+    <li><strong>Large Porion Name: </strong>{{ myInfoCtrl.myMenu.large_portion_name }}</li>
+  </ul>
+</div>
+<div class="container" ng-if="!myInfoCtrl.registered">
+  <h3 class="center">Not Signed Up Yet. <a ui-sref="public.signup">Sign up</a> Now!</h3>
+</div>

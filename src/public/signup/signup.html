@@ -1,0 +1,26 @@
+<div class="container">
+  <form class="signup" name="signup">
+    <div class="form-group">
+      <label for="inputFirstName">First Name:</label>
+      <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" ng-model="signUp.info.firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="inputLastName">Last Name:</label>
+      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" ng-model="signUp.info.lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="inputEmailAddress">Email Address:</label>
+      <input type="email" class="form-control" id="inputEmailAddress" placeholder="Email Address" ng-model="signUp.info.emailAddress" required>
+    </div>
+    <div class="form-group">
+      <label for="inputPhoneNumber">Phone Number:</label>
+      <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number" ng-model="signUp.info.phoneNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="inputPhoneNumber">Menu Short Name:</label>
+      <input type="text" class="form-control" id="inputMenuShortName" placeholder="Menu Short Name" ng-model="signUp.info.shortName" ng-keyup="signUp.validateShortNameAtKeyUp()" required>
+    </div>
+    <h3>{{ signUp.message }}</h3>
+    <button type="submit" class="btn btn-primary" ng-click="signUp.submit()" ng-disabled="signup.$invalid">Submit</button>
+  </form>
+</div>
